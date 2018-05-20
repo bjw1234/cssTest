@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>doc</title>
+	<style type="text/css">
+
+		body {			
+			background: pink;
+			height: 4vh;
+		}
+		#doc {  
+			position: relative;	
+			width: 155px;
+			height: 200px;
+			background: #0776ec;
+			margin: 100px auto 0;
+			border-radius: 10px;
+		}
+		#doc:after {
+			position: absolute;
+			content: "";
+			right: 0;
+			top: 0;
+			width: 0;
+			height: 0;
+			border:30px solid #59a8eb;
+			border-top-color: #fff;
+			border-right-color: #fff;
+			border-bottom-left-radius: 10px;
+		}
+		#doc:before {
+			position: absolute;
+			content: "CSS";
+			bottom: 10px;
+			left: 10px;
+			color: #fff;
+			font: 700 30px/30px "Microsoft YaHei";
+		}
+
+		#test{
+			width: 100px;
+			height: 100px;
+			/*background: green;*/
+			margin: 30px auto 0;
+			/*实现鹰嘴效果*/			
+			border-top:30px solid red;
+			border-top-left-radius: 80px 80px;		
+		}
+
+
+
+.share {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	border: solid 10px #000;
+	border-top: none;
+	border-right: none;
+	position: relative;
+}
+
+.topline {
+	position: absolute;
+	height: 10px;
+	width: 40%;
+	top: 0;
+	background: #000;
+}
+
+.topline::after {
+	position: absolute;
+	right: -10px;
+	top: 0;
+	border-top: 10px solid #000;
+	border-right: 10px solid transparent;
+	content: "";
+	width: 0;
+	height: 0
+}
+
+.rightline {
+	position: absolute;
+	height: 40%;
+	width: 10px;
+	right: 0;
+	background: #000;
+	bottom: 0
+}
+
+.rightline::after {
+	position: absolute;
+	right: 0;
+	top: -10px;
+	border-bottom: 10px solid #000;
+	border-left: 10px solid transparent;
+	content: "";
+	width: 0;
+	height: 0
+}
+
+.sanjiao {
+	width: 0;
+	height: 0;
+	border-color: transparent transparent transparent #000;
+	border-style: solid;
+	border-width: 80px;
+	border-left-width: 90px;
+	position: absolute;
+	right: 0;
+	transform: translate(110px, -40px);
+	z-index: 3
+}
+
+.radius {
+	border: 0 solid transparent;
+	border-top: 40px solid #000;
+	border-radius: 200px 0 0 0;
+	width: 120px;
+	height: 200px;
+	position: absolute;
+	right: 40px;
+	top: 20px
+}
+
+
+	#test2{
+		position: absolute;
+		left: 50px;
+		top: 100px;
+		width: 100px;
+		height: 100px;
+		background: blue;
+		overflow: hidden;
+	}
+
+	#test2:after{
+		content: "";
+		position: absolute;
+		top: -100px;
+		right: -100px;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		background: white;
+	}
+
+	#test3{
+		position: absolute;
+	    left: 50px;
+	    top: 300px;
+	    width: 200px;
+	    height: 200px;
+	    background: radial-gradient(transparent,transparent 70%, blue 71%,blue);
+	    clip: rect(100px,100px,200px,0);
+	}
+
+
+	ul,li{
+		list-style: none;
+	}
+	a{		
+		text-decoration: none;
+
+	}
+	#test4{		
+		width: 500px;
+		overflow: hidden;
+		display: inline-block;
+		border-bottom: 50px #0776ec solid;
+	}
+	#test4 li{
+		position: relative;
+		float: left;
+		margin: 20px 20px 0;		
+		background: #0776ec;
+		border-radius: 12px 12px 0 0;
+	}
+	#test4 li:before{
+		position: absolute;
+		left: -24px;
+		bottom: 0;
+		content: "";
+		width: 24px;
+		height: 24px;
+		background: radial-gradient(transparent, transparent 70%, #0776ec 71%, #0776ec);
+		    clip: rect(12px,24px,24px,12px);
+
+	}
+	#test4 li:after{
+		position: absolute;
+		right: -24px;
+		bottom: 0;
+		content: "";
+		width: 24px;
+		height: 24px;
+		background: radial-gradient(transparent, transparent 70%, #0776ec 71%, #0776ec);
+		clip: rect(12px,12px,24px,0);
+	}
+	#test4 li a{
+		color: white;
+		display: block;
+		font-size: 16px;
+		padding: 10px 20px 5px;
+	}
+
+
+
+	</style>
+
+
+</head>
+<body>
+	<div id="doc">
+	</div>
+	<div id="test">   	
+	</div>
+
+	<div class="share">
+		<div class="topline"></div>
+		<div class="rightline"></div>
+		<div class="sanjiao"></div>
+		<div class="radius"></div>
+	</div>
+
+	<div id="test2">
+		
+	</div>
+
+	<div id="test3">
+		
+	</div>
+
+	<ul id="test4">
+		<li><a href="#">新闻</a></li>	
+		<li><a href="#">娱乐</a></li>		
+		<li><a href="#">体育</a></li>		
+		<li><a href="#">科技</a></li>			
+	</ul>
+	<br><br><br><br><br><br><br><br>
+</body>
+</html>

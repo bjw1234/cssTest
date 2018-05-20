@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>docx</title>
+	<style type="text/css">
+
+body {
+	background: pink;
+}
+#docx {
+	position: relative;
+	width: 155px;
+	height: 200px;
+	margin: 100px auto 0;
+	border-radius: 10px;			
+	overflow: hidden;
+}
+#docx:after {
+	position: absolute;
+	content: "";
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border:30px solid #59a8eb;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-left-radius: 10px;
+	box-shadow: 0 0 0 180px #0776ec;
+}
+#docx:before{
+	z-index: 2;			
+	position: absolute;
+	content: "CSS";
+	bottom: 10px;
+	left: 10px;
+	color: #fff;
+	font: 700 30px/30px "Microsoft YaHei";
+}
+
+	</style>
+</head>
+<body>
+	<div id="docx"></div>
+</body>
+</html>

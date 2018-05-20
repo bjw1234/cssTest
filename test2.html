@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>vw、vh实现自适应布局</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">  
+	<style type="text/css">
+
+		/* 基础字体大小 */
+		html {
+		    font-size:16px;
+			background: red;		    
+		}
+
+		/* 字体：16~18px，屏幕：375~414px */
+		@media screen and (min-width: 375px) {
+		    html {        
+		        font-size:calc(16px + 2 * (100vw - 375px) / 39);
+		        font-size:calc(100% + 2 * (100vw - 375px) / 39);
+		        background: green;	
+		    }
+		}
+
+		/* 字体：18~22px，屏幕：414~1000px */
+		@media screen and (min-width:414px) {
+		    html {
+		        font-size:calc(18px + 4 * (100vw - 414px) / 586);
+		        font-size:calc(112.5% + 4 * (100vw - 414px) / 586);
+		        background: blue;	
+		    }
+		}
+
+		/* 字体：20~24px，屏幕：600~1000px */
+		@media screen and (min-width:600px) {
+		    html {
+		        font-size:calc(20px + 4 * (100vw - 600px) / 400);
+		        font-size:calc(125% + 4 * (100vw - 600px) / 400);
+		        background: yellow;	
+		    }
+		}
+
+		/* 1000px往后每100px增加0.5px */
+		@media screen and (min-width:1000px) {
+		    html {
+		        font-size:calc(22px + 5 * (100vw - 1000) / 1000);
+		        font-size:calc(22px + 5 * (137.5% - 1000) / 1000);
+		        background: white;	
+		    }
+		}
+
+		.content-wrapper {
+			width: 20rem;
+			background: pink;
+			margin: 0 auto;
+			font-size: 0;			
+		}
+		.content-wrapper img { 
+			float: left;
+			width: 8rem;
+			padding-right: 10px;			
+		}
+		.content-wrapper p {
+			font-size: 0.8rem;
+			overflow: hidden;
+			color: #666;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="content-wrapper">
+		<img src="./5.jpg">
+		<p>vw: 相对于视窗的宽度，视窗宽度是100vw。vh: 相对于视窗的高度，视窗高度是100vh。vm: 相对于视窗的宽度或高度，取决于那个更小。这里的"视区"所指为浏览器内部的可视区域大小，不包含任务栏标题栏以及底部工具栏的浏览器区域大小。</p>		
+	</div>
+</body>
+</html>
